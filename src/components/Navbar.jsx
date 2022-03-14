@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Button, Menu, Typography, Avatar } from "antd";
+import { Menu, Typography, Avatar } from "antd";
 import {
 	HomeOutlined,
 	MoneyCollectOutlined,
 	FundOutlined,
 	BulbOutlined,
-	MenuOutlined,
 } from "@ant-design/icons";
 import icon from "../images/cryptocurrency.png";
 
@@ -21,8 +20,8 @@ const Navbar = () => {
 				</Typography.Title>
 			</div>
 
-			<Menu theme="dark">
-				<Menu.Item key="1" icon={<HomeOutlined />}>
+			<Menu theme="dark" className="navigation">
+				<Menu.Item key="1" icon={<HomeOutlined size={12} />}>
 					<Link to="/">Home</Link>
 				</Menu.Item>
 				<Menu.Item key="2" icon={<FundOutlined />}>

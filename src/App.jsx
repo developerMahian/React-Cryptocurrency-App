@@ -3,15 +3,15 @@ import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 
 import {
-	Navbar,
 	Homepage,
 	Exchanges,
 	Cryptocurrencies,
 	CryptoDetails,
 	News,
-} from "./components";
+} from "./pages";
+import { Navbar } from "./components";
 
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
 	return (
@@ -21,7 +21,7 @@ const App = () => {
 			</header>
 
 			<main>
-				<Layout>
+				<Layout className="main-container">
 					<div className="routes">
 						<Routes>
 							<Route path="/" element={<Homepage />} />
