@@ -17,6 +17,15 @@ a:hover {
 	color: var(--pink) !important;
 }
 
+img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+h3 {
+	color: var(--pink) !important;
+}
+
 .app {
 	display: flex;
 	overflow: hidden;
@@ -167,11 +176,12 @@ h2.ant-typography.logo {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	gap: 10px;
-}
 
-.coin-heading-container .coin-name {
-	font-weight: 900;
-	color: var(--pink);
+	.coin-name {
+		font-weight: 900;
+		color: var(--pink);
+		margin-bottom: 0;
+	}
 }
 
 .coin-heading-container p {
@@ -197,7 +207,17 @@ h2.ant-typography.logo {
 .coin-details-heading {
 	font-weight: 700 !important;
 	margin-top: 20px !important;
-	color: var(--pink) !important;
+
+	.main-heading,
+	h3 {
+		font-size: 24px;
+		margin-bottom: 12px;
+		color: var(--pink) !important;
+	}
+
+	p {
+		color: initial;
+	}
 }
 
 .coin-stats {
@@ -277,6 +297,10 @@ h2.ant-typography.logo {
 	font-size: 1rem;
 }
 
+.coin-stats {
+	min-width: 360px;
+}
+
 .coin-link:hover,
 .coin-stats:hover {
 	background-color: var(--bgSecondary);
@@ -313,35 +337,37 @@ h2.ant-typography.logo {
 }
 
 .select-news {
-	width: 180px;
-}
+	width: 250px;
 
-.news-card {
-	min-height: 300px !important;
-}
-
-.news-image-container {
-	display: flex !important;
-	justify-content: space-between !important;
+	&.ant-select {
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 .news-title {
 	width: 70%;
 }
 
-.news-image-container .img {
-	width: 100px;
-	height: 100px;
-}
+.news-card {
+	.news-image-container {
+		display: flex;
+		gap: 15px;
+	}
 
-.news-card p {
-	color: black;
-	margin: 10px 0px !important;
+	p {
+		color: black;
+		margin: 10px 0px !important;
+	}
 }
 
 .provider-container {
 	display: flex;
 	justify-content: space-between;
+
+	p {
+		display: inline-block;
+	}
 }
 
 .provider-name {
@@ -395,17 +421,14 @@ h2.ant-typography.logo {
 	width: 250px;
 }
 
-.crypto-card {
-	min-width: 250px;
-}
-
 .crypto-card .crypto-image {
 	width: 35px;
 }
 
-.select-timeperiod {
-	width: 200px !important;
-	margin-top: 20px !important;
+.select-timeperiod-wrapper .select-timeperiod {
+	display: block;
+	width: 220px !important;
+	margin: 25px auto;
 }
 
 footer {

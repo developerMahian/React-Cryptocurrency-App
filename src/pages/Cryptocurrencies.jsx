@@ -7,8 +7,8 @@ import millify from "millify";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 
 const Cryptocurrencies = ({ simplified }) => {
-	const cardCount = simplified ? 4 : 100;
-	const { data, isLoading } = useGetCryptosQuery(cardCount);
+	const cardCount = simplified ? 8 : 100;
+	const { data, isFetching } = useGetCryptosQuery(cardCount);
 	const [cryptos, setCryptos] = useState(data?.data?.coins);
 	const [searchTerm, setSearchTerm] = useState("");
 
@@ -20,7 +20,7 @@ const Cryptocurrencies = ({ simplified }) => {
 		setCryptos(filteredItem);
 	}, [data, searchTerm]);
 
-	if (isLoading) return <h1>Fetching Data...</h1>;
+	if (isFetching) return <h1>Fetching Data...</h1>;
 
 	return (
 		<>
@@ -43,7 +43,7 @@ const Cryptocurrencies = ({ simplified }) => {
 						className="crypto-card"
 						key={currency.rank}
 					>
-						<Link to={`/crypto/${currency.rank}`}>
+						<Link to={`/crypto/${currency.uuid}`}>
 							<Card
 								title={currency.name}
 								extra={<img className="crypto-image" src={currency.iconUrl} />}

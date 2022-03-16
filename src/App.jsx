@@ -9,7 +9,7 @@ import {
 	CryptoDetails,
 	News,
 } from "./pages";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 
 import "./App.scss";
 
@@ -25,28 +25,15 @@ const App = () => {
 					<div className="routes">
 						<Routes>
 							<Route path="/" element={<Homepage />} />
-							<Route path="/exchanges" element={<Exchanges />} />
-							<Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
-							<Route path="/crypto/:coinId" element={<CryptoDetails />} />
 							<Route path="/news" element={<News />} />
+							<Route path="/exchanges" element={<Exchanges />} />
+							<Route path="/crypto/:coinId" element={<CryptoDetails />} />
+							<Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
 						</Routes>
 					</div>
 				</Layout>
 
-				<footer>
-					<Typography.Title
-						level={5}
-						style={{ color: "white", textAlign: "center" }}
-					>
-						Cryptoverse <br />
-						All Rights Reserved
-					</Typography.Title>
-					<Space>
-						<Link to="/">Home</Link>
-						<Link to="/exchanges">Exchanges</Link>
-						<Link to="/news">News</Link>
-					</Space>
-				</footer>
+				<Footer />
 			</main>
 		</div>
 	);

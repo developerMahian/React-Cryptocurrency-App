@@ -14,20 +14,18 @@ export const cryptoApi = createApi({
 		getCryptos: builder.query({
 			query: (cardCount) => createRequest(`/coins?limit=${cardCount}`),
 		}),
+		getCryptoDetails: builder.query({
+			query: (coinId) => createRequest(`/coin/${coinId}`),
+		}),
+		getCryptoHistory: builder.query({
+			query: ({ coinId, timePeriod }) =>
+				createRequest(`/coin/${coinId}/history?timePeriod=${timePeriod}`),
+		}),
 	}),
 });
 
-export const { useGetCryptosQuery } = cryptoApi;
-
-/*/ Bing news search api endpoint...
-var options = {
-	method: "GET",
-	url: "https://bing-news-search1.p.rapidapi.com/news",
-	params: { safeSearch: "Off", textFormat: "Raw" },
-	headers: {
-		"x-bingapis-sdk": "true",
-		"x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
-		"x-rapidapi-key": "f5e153c0c6msh29f2bdb7028b126p1fe0f5jsn3fa25ffd5423",
-	},
-};
-*/
+export const {
+	useGetCryptosQuery,
+	useGetCryptoDetailsQuery,
+	useGetCryptoHistoryQuery,
+} = cryptoApi;
