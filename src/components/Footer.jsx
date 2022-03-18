@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
-import { Typography, Space } from "antd";
 
 const Footer = () => (
-	<footer>
-		<Typography.Title level={5} style={{ color: "white", textAlign: "center" }}>
-			Cryptoverse <br />
-			All Rights Reserved
-		</Typography.Title>
-		<Space>
+	<footer className="footer">
+		<div className="footer__nav">
 			<Link to="/">Home</Link>
+			<Link to="/cryptocurrencies">Cryptocurrencies</Link>
 			<Link to="/exchanges">Exchanges</Link>
 			<Link to="/news">News</Link>
-		</Space>
+		</div>
+		<div className="footer__copyright">
+			© 2022 Cryptoverse All Rights Reserved
+		</div>
 	</footer>
 );
 

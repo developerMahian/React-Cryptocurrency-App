@@ -6,11 +6,15 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 
 const News = ({ simplified }) => {
 	const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
+	const [newsSortBy, setNewsSortBy] = useState("relevance");
 	const { data: cryptoNews } = useGetCryptoNewsQuery({
 		newsCategory: newsCategory,
 		newsCount: simplified ? 6 : 15,
+		sortBy: newsSortBy,
 	});
 	const { data: coinData } = useGetCryptosQuery(60);
+
+	console.log(cryptoNews);
 
 	if (!cryptoNews?.value) return <h1>Fetching Data...</h1>;
 
@@ -24,21 +28,35 @@ const News = ({ simplified }) => {
 			<Row gutter={[22, 22]}>
 				{simplified ? null : (
 					<Col span={24}>
-						<Select
-							className="select-news"
-							showSearch
-							placeholder="Select a Topic"
-							optionFilterProp="children"
-							onChange={(value) => setNewsCategory(value)}
-							filterOption={(inputValue, option) =>
-								option.children.toLowerCase().indexOf(inputValue.toLowerCase())
-							}
-						>
-							<Option value="Cryptocurrency">Cryptocurrency</Option>
-							{coinData?.data?.coins.map((coin) => (
-								<Option value={coin.name}>{coin.name}</Option>
-							))}
-						</Select>
+						<div className="news-filter-wrapper">
+							<Select
+								className="select-news"
+								showSearch
+								placeholder="Select a Topic"
+								optionFilterProp="children"
+								onChange={(value) => setNewsCategory(value)}
+								filterOption={(inputValue, option) =>
+									option.children
+										.toLowerCase()
+										.indexOf(inputValue.toLowerCase()) >= 0
+								}
+							>
+								<Option value="Cryptocurrency">Cryptocurrency</Option>
+								{coinData?.data?.coins.map((coin) => (
+									<Option value={coin.name}>{coin.name}</Option>
+								))}
+							</Select>
+
+							<Select
+								className="sort-news"
+								defaultValue={"relevance"}
+								placeholder="Sort By"
+								onChange={(value) => setNewsSortBy(value)}
+							>
+								<Option value="relevance">Relevance</Option>
+								<Option value="date">Date</Option>
+							</Select>
+						</div>
 					</Col>
 				)}
 
@@ -50,12 +68,14 @@ const News = ({ simplified }) => {
 									<Title className="news-title" level={4}>
 										{news.name}
 									</Title>
-									<img
-										src={news?.image?.thumbnail?.contentUrl || demoImg}
-										alt="News Image"
-										width={80}
-										height={80}
-									/>
+									<div className="news-img-wrapper">
+										<img
+											src={news?.image?.thumbnail?.contentUrl || demoImg}
+											alt="News Image"
+											width={70}
+											height={70}
+										/>
+									</div>
 								</div>
 								<p>
 									{news.description.length > 140

@@ -1,39 +1,61 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-import { Menu, Typography, Avatar } from "antd";
+import { Menu, Typography, Avatar, Button } from "antd";
 import {
 	HomeOutlined,
 	MoneyCollectOutlined,
 	FundOutlined,
 	BulbOutlined,
+	MenuOutlined,
 } from "@ant-design/icons";
 import icon from "../images/cryptocurrency.png";
 
 const Navbar = () => {
+	const [isNavOpen, setIsNavOpen] = useState(true);
+	const [screenSize, setScreenSize] = useState(window.innerWidth);
+
+	useEffect(() => {
+		const handleResize = () => setScreenSize(window.innerWidth);
+
+		window.addEventListener("resize", handleResize);
+		handleResize();
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
+	useEffect(() => {
+		screenSize < 800 ? setIsNavOpen(false) : setIsNavOpen(true);
+	}, [screenSize]);
+
 	return (
 		<nav className="navbar">
 			<div className="logo-container">
-				<Avatar src={icon} size="large" />
-				<Typography.Title level={2} className="logo">
-					<Link to="/">Cryptoverse</Link>
-				</Typography.Title>
+				<Avatar src={icon}/>
+				<Link className="logo-name" to="/">Cryptoverse</Link>
+				<Button
+					className="menu-control-container"
+					onClick={() => setIsNavOpen(!isNavOpen)}
+				>
+					<MenuOutlined />
+				</Button>
 			</div>
 
-			<Menu theme="dark" className="navigation">
-				<Menu.Item key="1" icon={<HomeOutlined size={12} />}>
-					<Link to="/">Home</Link>
-				</Menu.Item>
-				<Menu.Item key="2" icon={<FundOutlined />}>
-					<Link to="/cryptocurrencies">Cryptocurrencies</Link>
-				</Menu.Item>
-				<Menu.Item key="3" icon={<MoneyCollectOutlined />}>
-					<Link to="/exchanges">Exchanges</Link>
-				</Menu.Item>
-				<Menu.Item key="4" icon={<BulbOutlined />}>
-					<Link to="/news">News</Link>
-				</Menu.Item>
-			</Menu>
+			{isNavOpen && (
+				<Menu theme="dark" mode="inline" className="navigation">
+					<Menu.Item key="1" icon={<HomeOutlined size={12} />}>
+						<Link to="/">Home</Link>
+					</Menu.Item>
+					<Menu.Item key="2" icon={<FundOutlined />}>
+						<Link to="/cryptocurrencies">Cryptocurrencies</Link>
+					</Menu.Item>
+					<Menu.Item key="3" icon={<MoneyCollectOutlined />}>
+						<Link to="/exchanges">Exchanges</Link>
+					</Menu.Item>
+					<Menu.Item key="4" icon={<BulbOutlined />}>
+						<Link to="/news">News</Link>
+					</Menu.Item>
+				</Menu>
+			)}
 		</nav>
 	);
 };

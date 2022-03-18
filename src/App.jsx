@@ -20,8 +20,8 @@ const App = () => {
 				<Navbar />
 			</header>
 
-			<main>
-				<Layout className="main-container">
+			<div className="main-wrapper">
+				<main className="main-container">
 					<div className="routes">
 						<Routes>
 							<Route path="/" element={<Homepage />} />
@@ -31,10 +31,10 @@ const App = () => {
 							<Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
 						</Routes>
 					</div>
-				</Layout>
+				</main>
 
 				<Footer />
-			</main>
+			</div>
 		</div>
 	);
 };
