@@ -29,16 +29,16 @@ const Navbar = () => {
 
 	return (
 		<nav className="navbar">
-			<div className="logo-container">
-				<Avatar src={icon}/>
-				<Link className="logo-name" to="/">Cryptoverse</Link>
+			<Link to="/" className="logo-container">
+				<Avatar src={icon} />
+				<span className="logo-name">Cryptoverse</span>
 				<Button
 					className="menu-control-container"
 					onClick={() => setIsNavOpen(!isNavOpen)}
 				>
 					<MenuOutlined />
 				</Button>
-			</div>
+			</Link>
 
 			{isNavOpen && (
 				<Menu theme="dark" mode="inline" className="navigation">
@@ -48,10 +48,7 @@ const Navbar = () => {
 					<Menu.Item key="2" icon={<FundOutlined />}>
 						<Link to="/cryptocurrencies">Cryptocurrencies</Link>
 					</Menu.Item>
-					<Menu.Item key="3" icon={<MoneyCollectOutlined />}>
-						<Link to="/exchanges">Exchanges</Link>
-					</Menu.Item>
-					<Menu.Item key="4" icon={<BulbOutlined />}>
+					<Menu.Item key="3" icon={<BulbOutlined />}>
 						<Link to="/news">News</Link>
 					</Menu.Item>
 				</Menu>

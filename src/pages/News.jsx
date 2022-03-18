@@ -14,8 +14,6 @@ const News = ({ simplified }) => {
 	});
 	const { data: coinData } = useGetCryptosQuery(60);
 
-	console.log(cryptoNews);
-
 	if (!cryptoNews?.value) return <h1>Fetching Data...</h1>;
 
 	const { Option } = Select;

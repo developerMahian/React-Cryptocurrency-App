@@ -43,6 +43,7 @@ h3 {
 }
 
 header {
+	// width for mobile...
 	width: 0;
 	z-index: 10;
 	background-color: rgb(0, 21, 41);
@@ -70,7 +71,7 @@ header {
 
 .main-wrapper {
 	@media screen and (min-width: 800px) {
-		width: 82%;
+		width: 84%;
 	}
 
 	.main-container {

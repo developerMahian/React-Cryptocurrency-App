@@ -131,7 +131,11 @@ const CryptoDetails = () => {
 				</Select>
 			</div>
 
-			<CryptoChart coinName={cryptoDetails.name} coinPrice={cryptoDetails.price} coinHistory={coinHistory} />
+			<CryptoChart
+				coinName={cryptoDetails.name}
+				coinPrice={cryptoDetails.price}
+				coinHistory={coinHistory}
+			/>
 
 			<Col className="stats-container">
 				<Col className="coin-value-statistics">

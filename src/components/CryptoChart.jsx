@@ -11,16 +11,19 @@ const CryptoChart = ({ coinName, coinPrice, coinHistory }) => {
 	for (let i = 0; i < coinHistory?.data?.history?.length; i++) {
 		coinHistoryPrices.push(coinHistory?.data?.history[i].price);
 		coinHistoryTimes.push(
-			new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString()
+			new Date(
+				coinHistory?.data?.history[i].timestamp * 1000
+			).toLocaleDateString()
 		);
 	}
 
 	const chartData = {
-		labels: coinHistoryTimes,
+		// reversing because labels run backwards for unknown reason...
+		labels: coinHistoryTimes.reverse(),
 		datasets: [
 			{
 				label: "Price in USD",
-				data: coinHistoryPrices,
+				data: coinHistoryPrices.reverse(),
 				fill: false,
 				backgroundColor: "#0071bd",
 				borderColor: "#0071bd",
@@ -28,16 +31,7 @@ const CryptoChart = ({ coinName, coinPrice, coinHistory }) => {
 		],
 	};
 
-	const chartOptions = {
-		scales: {
-			y: {
-				beginAtZero: false,
-			},
-			x: {
-				beginAtZero: false,
-			},
-		},
-	};
+	const chartOptions = {};
 
 	return (
 		<>

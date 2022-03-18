@@ -6,7 +6,7 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Cryptocurrencies, News } from "../pages";
 
 const Homepage = () => {
-	const { data, isFetching } = useGetCryptosQuery(4);
+	const { data, isFetching } = useGetCryptosQuery(1);
 	const globalStats = data?.data?.stats;
 	const { Title } = Typography;
 
