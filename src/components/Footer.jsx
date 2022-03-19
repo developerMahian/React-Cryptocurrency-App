@@ -5,7 +5,7 @@ const Footer = () => (
 		<div className="footer__nav">
 			<Link to="/">Home</Link>
 			<Link to="/cryptocurrencies">Cryptocurrencies</Link>
-			<Link to="/exchanges">Exchanges</Link>
+			{/* <Link to="/exchanges">Exchanges</Link> */}
 			<Link to="/news">News</Link>
 		</div>
 		<div className="footer__copyright">

@@ -86,8 +86,8 @@ header {
 			margin-top: 65px;
 		}
 
-		@media screen and (min-width: 1000px) {
-			margin-left: 40px;
+		@media screen and (min-width: 1060px) {
+			margin-left: 30px;
 		}
 	}
 }
@@ -297,7 +297,7 @@ header {
 }
 
 .coin-stats {
-	min-width: 360px;
+	width: 360px;
 }
 
 .coin-link:hover,
