@@ -10,7 +10,7 @@
 // 	const exchangeData = data?.data;
 // 	const { data: coinData } = useGetCryptosQuery(60);
 
-// 	if (isFetching) return <h1>Fetching Data...</h1>;
+// 	if (isFetching) return <PageLoading />;
 
 // 	console.log(exchangeData, coinData);
 
