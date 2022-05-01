@@ -11,7 +11,7 @@ const Footer = () => (
     <div className="footer__copyright">
       © 2022 Cryptoverse Made by{" "}
       <a
-        href="https://www.fiverr.com/dev_mahian?up_rollout=true"
+        href="https://www.fiverr.com/share/zl3ggR"
         target="_blank"
         rel="noreferrer"
       >
