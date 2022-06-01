@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
+import { Button } from "antd";
 import {
   GithubOutlined,
   SkypeOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
-import { Button } from "antd";
 
 const Footer = () => (
   <footer className="footer">
