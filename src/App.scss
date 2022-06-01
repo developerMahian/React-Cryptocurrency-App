@@ -483,7 +483,7 @@ header {
     justify-content: center;
     flex-wrap: wrap;
     gap: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 
     @media screen and (max-width: 448px) {
       gap: 14px;
@@ -495,8 +495,29 @@ header {
     }
   }
 
+  &__my-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    svg {
+      font-size: 20px;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.15) rotate(20deg);
+      }
+    }
+
+    a:nth-child(2) svg {
+      font-size: 24px;
+    }
+  }
+
   &__copyright {
     font-size: 12px;
     color: rgba($color: #fff, $alpha: 0.55);
+    margin-top: 8px;
   }
 }

@@ -7,6 +7,13 @@ import { Footer, Navbar } from "./components";
 import "./App.scss";
 
 const App = () => {
+  if (process.env.NODE_ENV === "production") {
+    console.log = () => {};
+    console.info = () => {};
+    console.error = () => {};
+    console.debug = () => {};
+  }
+
   return (
     <div className="app">
       <header>
