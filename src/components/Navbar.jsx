@@ -8,7 +8,7 @@ import {
   BulbOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
-import icon from "../images/cryptocurrency.png";
+import icon from "../images/logo.png";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(true);
