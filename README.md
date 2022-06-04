@@ -12,7 +12,7 @@
     Get to know the latest trends of Cryptocurrencies around the Globe. Visualize entire growth of different CryptoCoins through Graphs.
     <br />
     <br />
-    <a href="https://cryptoversereact.vercel.app/" target="_blank" ref="noreferrer">View the Product live</a>
+    <a href="https://cryptoversereact.vercel.app/">View the Product live</a>
   </p>
 </div>
 
@@ -48,16 +48,12 @@
 
 ## Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This project was built with many tools. Here are a some of them to mention:
 
-- [Next.js](https://nextjs.org/)
 - [React.js](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Angular](https://angular.io/)
-- [Svelte](https://svelte.dev/)
-- [Laravel](https://laravel.com)
-- [Bootstrap](https://getbootstrap.com)
-- [JQuery](https://jquery.com)
+- [Redux-Toolkit](https://redux-toolkit.js.org/)
+- [React Chart.js 2](https://react-chartjs-2.js.org/)
+- [Ant Design](https://ant.design/)
 
 <!-- GETTING STARTED -->
 
@@ -87,7 +83,7 @@ _Below is an example of how you can follow through this repository and build you
    ```
 3. Rename the .env.example as .env and set your own API keys
    ```js
-   const API_KEY = "ENTER YOUR API";
+   API_KEY = "ENTER YOUR API";
    ```
 
 <!-- CONTACT -->
@@ -103,6 +99,6 @@ Email - devmahiancontact@gmail.com
 ## Acknowledgments
 
 The mentor who guided me on this project with his courses:
-<a href="https://github.com/adrianhajdin" target="_blank" ref="noreferrer">Adrian Hajdin</a>
+<a href="https://github.com/adrianhajdin">Adrian Hajdin</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
